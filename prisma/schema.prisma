@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Song {
+  id       String @id @default(uuid())
+  title    String
+  genre    String
+  duration String
+  artistId String
+  artist   Artist @relation(fields: [artistId], references: [id])
+}
+
+model Artist {
+  id    String @id @default(uuid())
+  name  String
+  age   String
+  nationality String
+  songs Song[]
+}
