@@ -2,12 +2,12 @@ import express from "express";
 import "dotenv/config";
 import morgan from "morgan";
 import prisma from "./lib/prisma.js";
-
+import cors from "cors"
 const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
-
+app.use(cors({origin: process.env.CLIENT_URL}))
 app.get("/", async (req, res) => {
   try {
     res.status(200).json({ message: "We are here!" });
