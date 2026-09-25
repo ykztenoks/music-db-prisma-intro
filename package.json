@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "tsx watch app.ts",
     "start": "tsx app.ts",
+    "build": "tsc",
+    "vercel-build": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
