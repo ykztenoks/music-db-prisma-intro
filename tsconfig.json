@@ -6,6 +6,7 @@
     // "outDir": "./dist",
     "allowImportingTsExtensions": true,
     "noEmit": true,
+    "moduleResolution": "nodenext",
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
